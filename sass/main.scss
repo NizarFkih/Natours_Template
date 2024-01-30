@@ -1,47 +1,58 @@
+$color-primary: #55c57a;
+$color-primary-dark: #28b485;
+$color-primary-light: #7ed56f;
+$color-dark-grey: #777;
+$color-white: #fff;
+
 *,
 ::after,
 ::before {
   box-sizing: inherit;
   margin: 0rem;
-  padding: 0rem; }
-
+  padding: 0rem;
+}
 html {
-  font-size: 62.5%; }
-
+  font-size: 62.5%;
+}
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.7;
-  color: #777;
-  box-sizing: border-box; }
-
+  color: $color-dark-grey;
+  box-sizing: border-box;
+}
 .header {
   height: 95vh;
   width: 100%;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
-
+  position: relative;
+}
 header.header nav.header__nav-bar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3.5rem; }
-
+  padding: 3.5rem;
+}
 header.header nav.header__nav-bar div.header__logo-container {
   width: 6rem;
-  height: 3.5rem; }
-
+  height: 3.5rem;
+}
 header.header nav.header__nav-bar div.header__logo-container img.header__logo {
   max-width: 100%;
-  height: auto; }
-
+  height: auto;
+}
 header.header nav.header__nav-bar div.header__links-icon {
-  background-color: #fff;
+  background-color: $color-white;
   border-radius: 50%;
   padding: 1.5rem;
   display: flex;
@@ -50,25 +61,26 @@ header.header nav.header__nav-bar div.header__links-icon {
   height: 5rem;
   width: 5rem;
   align-items: center;
-  gap: 0.2rem; }
-
+  gap: 0.2rem;
+}
 header.header nav.header__nav-bar div.header__links-icon span {
   display: block;
   width: 2.5rem;
   height: 0.2rem;
-  background-color: black; }
-
+  background-color: black;
+}
 div.header__text-container {
   text-align: center;
   text-transform: uppercase;
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%); }
-
+  transform: translate(-50%, -50%);
+}
 div.header__text-container h1.heading-primary {
-  color: #fff;
-  margin-bottom: 4.5rem; }
+  color: $color-white;
+  margin-bottom: 4.5rem;
+}
 
 div.header__text-container h1.heading-primary p.heading-primary--main {
   display: block;
@@ -76,23 +88,25 @@ div.header__text-container h1.heading-primary p.heading-primary--main {
   font-weight: 400;
   letter-spacing: 3.5rem;
   animation-name: appeare;
-  animation-duration: 2.5s; }
-
+  animation-duration: 2.5s;
+}
 div.header__text-container h1.heading-primary p.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.5rem;
   animation-name: appeare;
-  animation-duration: 0.6s; }
-
+  animation-duration: 0.6s;
+}
 @keyframes appeare {
   0% {
     opacity: 0;
-    font-size: 0rem; }
+    font-size: 0rem;
+  }
   100% {
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 .btn:link,
 .btn:visited {
   text-decoration: none;
@@ -101,27 +115,27 @@ div.header__text-container h1.heading-primary p.heading-primary--sub {
   padding: 1.5rem 4rem;
   transition: all 0.3s;
   position: relative;
-  color: #777; }
-
+  color: $color-dark-grey;
+}
 .btn:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 3rem 2rem rgba(0, 0, 0, 0.253); }
-
+  box-shadow: 0 3rem 2rem rgba(0, 0, 0, 0.253);
+}
 .btn:active {
   transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 div.header__text-container a.btn--white {
   font-size: 1.6rem;
-  color: #777;
-  background-color: #fff;
+  color: $color-dark-grey;
+  background-color: $color-white;
   border: none;
   border-radius: 16rem;
-  cursor: pointer; }
-
+  cursor: pointer;
+}
 div.header__text-container a.btn::before {
   content: "";
-  background-color: #fff;
+  background-color: $color-white;
   display: inline-block;
   border-radius: 16rem;
   position: absolute;
@@ -130,16 +144,20 @@ div.header__text-container a.btn::before {
   width: 100%;
   height: 100%;
   z-index: -2;
-  transition: 0.8s; }
-
+  transition: 0.8s;
+}
 div.header__text-container a.btn:hover::before {
   animation-name: sparkShadow;
   animation-duration: 0.5s;
-  animation-timing-function: ease-out; }
-
+  animation-timing-function: ease-out;
+}
 @keyframes sparkShadow {
   0% {
-    opqcity: 1; }
+    opqcity: 1;
+  }
+
   100% {
     transform: scaleX(1.2) scaleY(1.6);
-    opacity: 0; } }
+    opacity: 0;
+  }
+}
